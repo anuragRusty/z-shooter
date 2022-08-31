@@ -1,4 +1,4 @@
-<h1><b>The Game is in under development so there will bugs.</b>
+<h1><b>The Game is in under development so there will be bugs.</b>
 </h1>
 <b> $ npm i <b> <br>
 <b> $ npm run dev <br>
