@@ -90,7 +90,7 @@ for(let i = 0; i<zombies.length; i++){
     zombies[i].y += zombies[i].speed;
     zombies[i].move = true;
   }
-  if(zombies[i].y >= screen_height + z_height/2 && zombies[i].move){
+  if(zombies[i].y >= screen_height + z_height/2 - 150 && zombies[i].move){
     zombies[i].move = false;
     zombies[i].reached = true;
     if(zombies[i].zombie){
@@ -155,7 +155,7 @@ for(let j = 0; j < zombies.length; j++){
 
 function visible(){
   for(let i = 0; i<zombies.length; i++){
-     if(zombies[i].y >= 2*z_height){
+     if(zombies[i].y >= 2*z_height-150){
         zombies[i].opac = 1;
      }
   }
@@ -208,6 +208,7 @@ function update(){
 
 setInterval(update,166);
 </script>
+<main>
 <div class="gamestatus">
 <div class="hearts">
 {#each life_stack as hearts}
@@ -230,12 +231,16 @@ setInterval(update,166);
 <button class="gamestate" on:click={handle_state}>{gameState}</button>
 </div>
 <h1>Level {level + 1}</h1>
-
+</main>
 <style>
+  main{
+    zoom:0.5;
+  }
   .grid{
+    position: relative;
     width: 768px;
     height: 1152px;
-    background-color: blue;
+    background-color: blue
   }
   .box{
     width: 64px;
@@ -246,7 +251,7 @@ setInterval(update,166);
     width:128px;
     position: absolute;
     left: 352px;
-    top: 1180px;
+    top: 1000px;
   }
   .restart{
     background-color: green;
